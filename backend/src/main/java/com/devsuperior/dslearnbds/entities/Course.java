@@ -19,16 +19,14 @@ public class Course implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
 	private String name;
 	private String imgUri;
 	private String imgGrayUri;
-
+	
 	@OneToMany(mappedBy = "course")
 	private List<Offer> offers = new ArrayList<>();
-
+	
 	public Course() {
-
 	}
 
 	public Course(Long id, String name, String imgUri, String imgGrayUri) {
@@ -99,5 +97,4 @@ public class Course implements Serializable {
 			return false;
 		return true;
 	}
-
 }

@@ -19,7 +19,7 @@ import com.devsuperior.dslearnbds.entities.enums.ResourceType;
 @Table(name = "tb_resource")
 public class Resource implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -27,9 +27,8 @@ public class Resource implements Serializable {
 	private String description;
 	private Integer position;
 	private String imgUri;
-
 	private ResourceType type;
-
+	
 	@ManyToOne
 	@JoinColumn(name = "offer_id")
 	private Offer offer;
@@ -108,7 +107,6 @@ public class Resource implements Serializable {
 		this.offer = offer;
 	}
 
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -133,5 +131,4 @@ public class Resource implements Serializable {
 			return false;
 		return true;
 	}
-
 }

@@ -12,27 +12,27 @@ import javax.persistence.Table;
 @Table(name = "tb_role")
 public class Role implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idLong;
+	private Long id;
 	private String authority;
-
+	
 	public Role() {
 	}
 
-	public Role(Long idLong, String authority) {
+	public Role(Long id, String authority) {
 		super();
-		this.idLong = idLong;
+		this.id = id;
 		this.authority = authority;
 	}
 
-	public Long getIdLong() {
-		return idLong;
+	public Long getId() {
+		return id;
 	}
 
-	public void setIdLong(Long idLong) {
-		this.idLong = idLong;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getAuthority() {
@@ -47,7 +47,7 @@ public class Role implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((idLong == null) ? 0 : idLong.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 
@@ -60,12 +60,11 @@ public class Role implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Role other = (Role) obj;
-		if (idLong == null) {
-			if (other.idLong != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!idLong.equals(other.idLong))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
-
 }

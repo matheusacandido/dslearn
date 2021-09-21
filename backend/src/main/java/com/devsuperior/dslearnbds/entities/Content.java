@@ -10,7 +10,7 @@ public class Content extends Lesson {
 
 	private String textContent;
 	private String videoUri;
-
+	
 	public Content() {
 	}
 
@@ -35,5 +35,4 @@ public class Content extends Lesson {
 	public void setVideoUri(String videoUri) {
 		this.videoUri = videoUri;
 	}
-
 }

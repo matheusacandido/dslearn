@@ -22,18 +22,16 @@ public class Section implements Serializable {
 	private String description;
 	private Integer position;
 	private String imgUri;
-
+	
 	@ManyToOne
 	@JoinColumn(name = "resource_id")
 	private Resource resource;
-
+	
 	@ManyToOne
 	@JoinColumn(name = "prerequisite_id")
 	private Section prerequisite;
 	
-	
 	public Section() {
-
 	}
 
 	public Section(Long id, String title, String description, Integer position, String imgUri, Resource resource,
@@ -104,10 +102,6 @@ public class Section implements Serializable {
 		this.prerequisite = prerequisite;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -132,5 +126,4 @@ public class Section implements Serializable {
 			return false;
 		return true;
 	}
-
 }
